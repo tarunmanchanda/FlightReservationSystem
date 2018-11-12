@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/" extends="struts-default, json-default">
+		
+	<action name="LoginAction" class="com.wipro.frs.action.LoginAction">
+		<result	name="adminsuccess">/adminsuccess.jsp</result>
+		<result	name="customersuccess">/customersuccess.jsp</result>
+		<result name="fail">/MainPage.jsp?status=*+already+logged+in!!+retry</result>
+		<result name="changepassword">/UpdateAdminPassword.jsp</result>
+	</action>
+	
+	<action name="updatepassword" class="com.wipro.frs.action.UpdateAdminPasswordAction">
+		<result name="updatesuccess">/adminsuccess.jsp</result>
+		<result name="updatefail">/UpdateAdminPassword.jsp</result>
+		<result name="updateinvalid">/UpdateAdminPassword.jsp</result>
+	</action>
+	
+	<action name="updatepassworduser" class="com.wipro.frs.action.UpdateAdminPasswordAction" method="execute1">
+		<result name="updatesuccess">/customersuccess.jsp</result>
+		<result name="updatefail">/updateuserpassword.jsp</result>
+		<result name="updateinvalid">/updateuserpassword.jsp</result>
+	</action>
+	
+	<action name="logout1" class="com.wipro.frs.action.LoginAction" method="LogoutMethod">
+		<result name="success">/MainPage.jsp</result>
+		<result name="error">/customersuccess.jsp</result>
+	</action> 
+	
+	
+	<action name="register" class="com.wipro.frs.action.UserRegisterAction">
+		<result name="success">/CreditCardDetails.jsp</result>
+		<result name="error">/NewUserSignup.jsp</result>
+	</action> 
+	
+	
+	<action name="addcreditcard" class="com.wipro.frs.action.CreditCardDetailsAction">
+		<result name="success">/CreditCardSuccess.jsp</result>
+		<result name="error">/CreditCardDetails.jsp</result>
+	</action> 
+	
+	
+	<action name="addflight" class="com.wipro.frs.action.FlightAction">
+		<result name="success">/adminsuccess.jsp</result>
+		<result name="error">/AddFlight.jsp</result>
+	</action> 
+	
+	<action name="viewall" class="com.wipro.frs.action.FlightAction" method="viewAllflights">
+		<result name="success">/ViewAllFlights.jsp</result>
+		<result name="error">/Flight.jsp</result>
+	</action> 
+	
+	<action name="viewbyid" class="com.wipro.frs.action.FlightAction" method="viewFlightsbyId">
+		<result name="success">/ViewFlightById.jsp</result>
+		<result name="error">/Flight.jsp</result>
+	</action> 
+	
+	
+	<action name="addroute" class="com.wipro.frs.action.RouteAction">
+		<result name="success">/adminsuccess.jsp</result>
+		<result name="error">/AddRoute.jsp</result>
+	</action> 
+	
+	<action name="viewallroute" class="com.wipro.frs.action.RouteAction" method="viewAllroutes">
+		<result name="success">/ViewAllRoute.jsp</result>
+		<result name="error">/Route.jsp</result>
+	</action> 
+	
+	<action name="viewroutebyid" class="com.wipro.frs.action.RouteAction" method="viewRoutebyId">
+		<result name="success">/ViewRouteById.jsp</result>
+		<result name="error">/Route.jsp</result>
+	</action> 
+	
+	
+	<action name="addschedule" class="com.wipro.frs.action.ScheduleAction">
+		<result name="success">/adminsuccess.jsp</result>
+		<result name="error">/AddSchedule.jsp</result>
+	</action> 
+	
+	<action name="editflights" class="com.wipro.frs.action.FlightAction" method="viewFlightsbyId">
+		<result name="success">/ModifyFlight.jsp</result>
+		<result name="error">/ViewAllFlights.jsp</result>
+	</action>
+	
+	<action name="savemodify" class="com.wipro.frs.action.FlightAction" method="editFlight">
+		<result name="success">/ViewAllFlights.jsp</result>
+		<result name="error">/ModifyFlight.jsp</result>
+	</action>
+	
+	<action name="deleteflights" class="com.wipro.frs.action.FlightAction" method="flightDelete">
+		<result name="success">/ViewAllFlights.jsp</result>
+		<result name="error">/ViewFlight.jsp</result>
+	</action>
+	
+	<action name="editroutes" class="com.wipro.frs.action.RouteAction" method="viewRoutebyId">
+		<result name="success">/ModifyRoute.jsp</result>
+		<result name="error">/ViewAllRoute.jsp</result>
+	</action>
+	<action name="savemodifyroute" class="com.wipro.frs.action.RouteAction" method="editRoute">
+		<result name="success">/ViewAllRoute.jsp</result>
+		<result name="error">/ModifyRoute.jsp</result>
+	</action>
+	
+	<action name="deleteroutes" class="com.wipro.frs.action.RouteAction" method="routeDelete">
+		<result name="success">/ViewAllRoute.jsp</result>
+		<result name="error">/ViewRoute.jsp</result>
+	</action>
+	<action name="viewallschedule" class="com.wipro.frs.action.ScheduleAction" method="viewAllschedule">
+		<result name="success">/ViewAllSchedule.jsp</result>
+		<result name="error">/ViewSchedule.jsp</result>
+	</action> 
+	
+	<action name="viewschedulebyid" class="com.wipro.frs.action.ScheduleAction" method="viewSchedulebyId">
+		<result name="success">/ViewScheduleById.jsp</result>
+		<result name="error">/Schedule.jsp</result>
+	</action> 
+	<action name="editschedule" class="com.wipro.frs.action.ScheduleAction" method="viewSchedulebyId">
+		<result name="success">/ModifySchedule.jsp</result>
+		<result name="error">/ViewAllSchedule.jsp</result>
+	</action>
+	<action name="savemodify1" class="com.wipro.frs.action.ScheduleAction" method="editSchedule">
+		<result name="success">/ViewAllSchedule.jsp</result>
+		<result name="error">/ModifyRoute.jsp</result>
+	</action>
+	<action name="deleteschedules" class="com.wipro.frs.action.ScheduleAction" method="scheduleDelete">
+		<result name="success">/ViewAllSchedule.jsp</result>
+		<result name="error">/ViewSchedule.jsp</result>
+	</action>
+	<action name="editschedules1" class="com.wipro.frs.action.ScheduleAction" method="viewSchedulebyId">
+		<result name="success">/ModifySchedule.jsp</result>
+		<result name="error">/ViewAllSchedule.jsp</result>
+	</action>
+	<action name="deleteschedules1" class="com.wipro.frs.action.ScheduleAction" method="scheduleDelete">
+		<result name="success">/Schedule.jsp</result>
+		<result name="error">/ViewSchedule.jsp</result>
+	</action>
+	
+	<action name="ViewReservationScheduleByRoute" class="com.wipro.frs.action.CustomerAction" method="viewAllschedulebyroute">
+		<result name="success">/viewScheduleByRoute.jsp</result>
+		<result name="error">/reservation.jsp</result>
+	</action> 
+	
+		<action name="reserveticket" class="com.wipro.frs.action.CustomerAction" method="viewFlightName">
+		<result name="success">/reserveticket.jsp</result>
+		
+	</action> 
+	<action name="addpassenger" class="com.wipro.frs.action.AddPassengerAction">
+		<result name="error">/reservation.jsp</result>
+		<result name="success">/passengerdetails.jsp</result>
+	</action>
+	
+	<action name="reserve" class="com.wipro.frs.action.AddPassengerAction" method="reserve">
+		<result name="error">/reserveticket.jsp</result>
+		<result name="success">/passengerdetails.jsp</result>
+	</action>
+	
+	<action name="insertpassenger" class="com.wipro.frs.action.AddPassengerAction" method="donePassenger">
+		<result name="error">/Fail.jsp</result>
+		<result name="success">/done.jsp</result>
+	</action>
+	
+	<action name="getSource" class="com.wipro.frs.action.GetSource" method="getSources">
+		<result type="json">/reservation.jsp</result>
+	</action>
+	<action name="getDestination" class="com.wipro.frs.action.GetSource">
+		<result type="json">/reservation.jsp</result>
+	</action>
+	<action name="PayAmount" class="com.wipro.frs.action.CustomerPayAmountAction">
+		<result name="error">/fail.jsp</result>
+		<result name="success">/success.jsp</result>
+	</action>
+	
+	<action name="ViewPassengerbySchedule" class="com.wipro.frs.action.AddPassengerAction" method="executeViewPassenger">
+			<result name="success">/viewpassengerbyadmin.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="failed">/failed.jsp</result>
+			</action>
+	<action name="viewbooking" class="com.wipro.frs.action.TicketAction" method="viewTicketsAll">
+		<result name="error">/fail.jsp</result>
+		<result name="success">/viewticketall.jsp</result>
+	</action>
+	<action name="viewticket" class="com.wipro.frs.action.TicketAction">
+		<result name="error">/fail.jsp</result>
+		<result name="success">/viewticket.jsp</result>
+	</action>
+	<action name="cancelticket" class="com.wipro.frs.action.TicketAction" method="cancelTicket">
+		<result name="error">/fail.jsp</result>
+		<result name="success">/success.jsp</result>
+	</action>
+</package>
+</struts>

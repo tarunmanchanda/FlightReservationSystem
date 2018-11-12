@@ -1,0 +1,94 @@
+.vertical-nav {
+	
+    height:auto;
+    list-style:none;
+    width: 100%; /******* MODIFIED ********/
+    margin: 20px 0 0 0;
+}
+.vertical-nav li {
+	 
+    height: 40px;
+    margin: 0;
+    padding: 5px 0;
+    background-color: black;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    clear:both;
+    width: 170px;  /******* MODIFIED ********/
+}
+.vertical-nav li:hover {
+    background-color:#069;
+    color:#FFFFFF;
+}
+/**inside text decoration ****/
+.vertical-nav li a {
+    font-family:Calibri, Arial;
+    font-size:18px;
+    font-weight:bold;
+    color: white;
+    text-decoration:none;
+}
+.vertical-nav li.current {
+    background-color:#F36F25;
+}
+.vertical-nav li.current a {
+    color:#FFFFFF;
+}
+vertical-nav ul li ul {
+    display:none;
+    list-style-type:none;
+    width:150px;
+    padding:0px;
+    margin-top:3px;
+    margin-left:-5px;
+}
+vertical-nav ul li:hover ul {
+    display:block;
+}
+vertical-nav ul li:hover ul li {
+    background-color:#555555;
+    width:150px;
+    height:30px;
+    display:inline-block;
+}
+vertical-nav ul li ul li:hover {
+    background-color:yellow;
+}
+vertical-nav ul li ul li a {
+    color:#FFF;
+    text-decoration:underline;
+}
+vertical-nav ul li ul li a:hover {
+    text-decoration:none;
+}
+.vertical-nav li ul {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+}
+.vertical-nav li:hover ul {
+    display: block;
+}
+.vertical-nav li:hover .sub-menu
+{
+    position: relative;   
+    margin-top: -27.5px;
+}
+.sub-menu li
+{
+    position: relative;
+    display: block;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-width: 180px;
+    white-space: nowrap;
+    z-index:1;
+}
+.sub-menu li a
+{
+    display:inline-block;
+    padding: 0 10px;
+}

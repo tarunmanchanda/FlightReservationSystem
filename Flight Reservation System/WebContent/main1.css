@@ -1,0 +1,118 @@
+
+@CHARSET "ISO-8859-1";
+
+*{
+	margin:0px;
+	padding:0px;
+}
+
+#container{
+	width:auto;
+	height:auto;
+	background-color:blue;
+	min-width: 100px;
+}
+
+#header{
+	width:100%;
+	height:170px;
+	float: left;
+	background-color:black;
+}
+
+#top{
+	width:100%;
+	height:170px;
+	float:left;
+	background-color: white;
+}
+
+#logo{
+	width:23%;
+	height:140px;
+	float:left;
+	background-color: grey;
+	background-image:url('images/images5.jpg');
+}
+
+#title{
+	width:77%;
+	height:140px;
+	float:right;
+	background-color: white;
+}
+
+#navbar{
+	width:100%;
+	height:20px;
+	float:left;
+	background-color:orange;
+}
+
+#content{
+	width:100%;
+	height:600px;
+	float:left;
+	background-color: aqua;
+}
+
+#footer{
+	width:100%;
+	height:50px;
+	float:left;
+	background-color: brown;
+}
+#info{
+	width:17%;
+	height: 600px;
+	background-color: black;
+	float: left;
+}
+
+#login{
+	
+    width:83%;
+	height: 600px;
+	background-color: white;
+	float: right;
+	font-family:monospace;
+	font-size: 25px;
+	font-style: normal;
+	
+
+}
+
+#text
+{
+	border-color:#cccccc;
+    padding:15px; 
+    border-radius:10px; 
+    border-width:3px; 
+    font-size:15px; 
+    border-style:outset;
+}
+#loginbutton{
+	width: 90px;
+	height: 40px;
+	color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(66, 184, 221);
+}
+#leftnav{
+	
+	width:25%;
+	height:20px;
+	float:left;
+	background-color: yellow;
+
+}
+
+#rightnav{
+	
+	width:75%;
+	height:20px;
+	float:right;
+	background-color:black;
+
+}
